@@ -1,8 +1,10 @@
 from groq import Groq
+import streamlit as st
 import base64, os, json, re, time
 from googlesearch import search
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+#client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 VISION_MODEL = "llama-3.2-11b-vision-preview"
 TEXT_MODEL = "llama-3.1-8b-instant"
